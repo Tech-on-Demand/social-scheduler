@@ -3,12 +3,12 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { SocialAbstract } from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@turbotech/social-nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeId } from '@turbotech/social-nestjs-libraries/services/make.is';
+import { SocialAbstract } from '@turbotech/social-nestjs-libraries/integrations/social.abstract';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
-import { KickDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settings/kick.dto';
+import { KickDto } from '@turbotech/social-nestjs-libraries/dtos/posts/providers-settings/kick.dto';
 import { createHash, randomBytes } from 'crypto';
 
 export class KickProvider extends SocialAbstract implements SocialProvider {

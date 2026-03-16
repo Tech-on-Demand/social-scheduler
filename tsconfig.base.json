@@ -25,10 +25,10 @@
     "noFallthroughCasesInSwitch": true,
     "strict": true,
     "paths": {
-      "@gitroom/backend/*": ["apps/backend/src/*"],
+      "@turbotech/social-backend/*": ["apps/backend/src/*"],
       "@gitroom/frontend/*": ["apps/frontend/src/*"],
-      "@gitroom/helpers/*": ["libraries/helpers/src/*"],
-      "@gitroom/nestjs-libraries/*": ["libraries/nestjs-libraries/src/*"],
+      "@turbotech/social-helpers/*": ["libraries/helpers/src/*"],
+      "@turbotech/social-nestjs-libraries/*": ["libraries/nestjs-libraries/src/*"],
       "@gitroom/react/*": ["libraries/react-shared-libraries/src/*"],
       "@gitroom/plugins/*": ["libraries/plugins/src/*"],
       "@gitroom/orchestrator/*": ["apps/orchestrator/src/*"],

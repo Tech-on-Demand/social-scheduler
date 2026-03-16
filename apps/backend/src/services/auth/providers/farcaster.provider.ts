@@ -1,7 +1,7 @@
 import {
   AuthProvider,
   AuthProviderAbstract,
-} from '@gitroom/backend/services/auth/providers.interface';
+} from '@turbotech/social-backend/services/auth/providers.interface';
 import { NeynarAPIClient } from '@neynar/nodejs-sdk';
 
 const client = new NeynarAPIClient({

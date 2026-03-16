@@ -1,4 +1,4 @@
-import { NewsletterInterface } from '@gitroom/nestjs-libraries/newsletter/newsletter.interface';
+import { NewsletterInterface } from '@turbotech/social-nestjs-libraries/newsletter/newsletter.interface';
 
 export class BeehiivProvider implements NewsletterInterface {
   name = 'beehiiv';

@@ -1,8 +1,8 @@
 import { Controller, Get } from '@nestjs/common';
-import { GetUserFromRequest } from '@gitroom/nestjs-libraries/user/user.from.request';
+import { GetUserFromRequest } from '@turbotech/social-nestjs-libraries/user/user.from.request';
 import { Organization, User } from '@prisma/client';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
-import { NotificationService } from '@gitroom/nestjs-libraries/database/prisma/notifications/notification.service';
+import { GetOrgFromRequest } from '@turbotech/social-nestjs-libraries/user/org.from.request';
+import { NotificationService } from '@turbotech/social-nestjs-libraries/database/prisma/notifications/notification.service';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Notifications')

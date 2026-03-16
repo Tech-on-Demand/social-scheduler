@@ -10,20 +10,20 @@ import {
   StreamableFile,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { AgenciesService } from '@gitroom/nestjs-libraries/database/prisma/agencies/agencies.service';
-import { PostsService } from '@gitroom/nestjs-libraries/database/prisma/posts/posts.service';
-import { TrackService } from '@gitroom/nestjs-libraries/track/track.service';
+import { AgenciesService } from '@turbotech/social-nestjs-libraries/database/prisma/agencies/agencies.service';
+import { PostsService } from '@turbotech/social-nestjs-libraries/database/prisma/posts/posts.service';
+import { TrackService } from '@turbotech/social-nestjs-libraries/track/track.service';
 import { RealIP } from 'nestjs-real-ip';
-import { UserAgent } from '@gitroom/nestjs-libraries/user/user.agent';
-import { TrackEnum } from '@gitroom/nestjs-libraries/user/track.enum';
+import { UserAgent } from '@turbotech/social-nestjs-libraries/user/user.agent';
+import { TrackEnum } from '@turbotech/social-nestjs-libraries/user/track.enum';
 import { Request, Response } from 'express';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { getCookieUrlFromDomain } from '@gitroom/helpers/subdomain/subdomain.management';
-import { AgentGraphInsertService } from '@gitroom/nestjs-libraries/agent/agent.graph.insert.service';
-import { Nowpayments } from '@gitroom/nestjs-libraries/crypto/nowpayments';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { pricing } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/pricing';
+import { makeId } from '@turbotech/social-nestjs-libraries/services/make.is';
+import { getCookieUrlFromDomain } from '@turbotech/social-helpers/subdomain/subdomain.management';
+import { AgentGraphInsertService } from '@turbotech/social-nestjs-libraries/agent/agent.graph.insert.service';
+import { Nowpayments } from '@turbotech/social-nestjs-libraries/crypto/nowpayments';
+import { SubscriptionService } from '@turbotech/social-nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { AuthService } from '@turbotech/social-helpers/auth/auth.service';
+import { pricing } from '@turbotech/social-nestjs-libraries/database/prisma/subscriptions/pricing';
 import { Readable, pipeline } from 'stream';
 import { promisify } from 'util';
 

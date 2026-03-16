@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { makeId } from '@turbotech/social-nestjs-libraries/services/make.is';
+import { AuthService } from '@turbotech/social-helpers/auth/auth.service';
+import { SubscriptionService } from '@turbotech/social-nestjs-libraries/database/prisma/subscriptions/subscription.service';
 
 export interface ProcessPayment {
   payment_id: number;

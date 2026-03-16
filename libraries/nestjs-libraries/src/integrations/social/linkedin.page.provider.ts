@@ -4,14 +4,14 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
-import { LinkedinProvider } from '@gitroom/nestjs-libraries/integrations/social/linkedin.provider';
+} from '@turbotech/social-nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeId } from '@turbotech/social-nestjs-libraries/services/make.is';
+import { LinkedinProvider } from '@turbotech/social-nestjs-libraries/integrations/social/linkedin.provider';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
-import { Plug } from '@gitroom/helpers/decorators/plug.decorator';
-import { timer } from '@gitroom/helpers/utils/timer';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
+import { Plug } from '@turbotech/social-helpers/decorators/plug.decorator';
+import { timer } from '@turbotech/social-helpers/utils/timer';
+import { Rules } from '@turbotech/social-nestjs-libraries/chat/rules.description.decorator';
 
 @Rules(
   'LinkedIn can have maximum one attachment when selecting video, when choosing a carousel on LinkedIn minimum amount of attachment must be two, and only pictures, if uploading a video, LinkedIn can have only one attachment'

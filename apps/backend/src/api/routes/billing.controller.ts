@@ -1,15 +1,15 @@
 import { Body, Controller, Get, HttpException, Param, Post, Req } from '@nestjs/common';
-import { SubscriptionService } from '@gitroom/nestjs-libraries/database/prisma/subscriptions/subscription.service';
-import { StripeService } from '@gitroom/nestjs-libraries/services/stripe.service';
-import { GetOrgFromRequest } from '@gitroom/nestjs-libraries/user/org.from.request';
+import { SubscriptionService } from '@turbotech/social-nestjs-libraries/database/prisma/subscriptions/subscription.service';
+import { StripeService } from '@turbotech/social-nestjs-libraries/services/stripe.service';
+import { GetOrgFromRequest } from '@turbotech/social-nestjs-libraries/user/org.from.request';
 import { Organization, User } from '@prisma/client';
-import { BillingSubscribeDto } from '@gitroom/nestjs-libraries/dtos/billing/billing.subscribe.dto';
+import { BillingSubscribeDto } from '@turbotech/social-nestjs-libraries/dtos/billing/billing.subscribe.dto';
 import { ApiTags } from '@nestjs/swagger';
-import { GetUserFromRequest } from '@gitroom/nestjs-libraries/user/user.from.request';
-import { NotificationService } from '@gitroom/nestjs-libraries/database/prisma/notifications/notification.service';
+import { GetUserFromRequest } from '@turbotech/social-nestjs-libraries/user/user.from.request';
+import { NotificationService } from '@turbotech/social-nestjs-libraries/database/prisma/notifications/notification.service';
 import { Request } from 'express';
-import { Nowpayments } from '@gitroom/nestjs-libraries/crypto/nowpayments';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
+import { Nowpayments } from '@turbotech/social-nestjs-libraries/crypto/nowpayments';
+import { AuthService } from '@turbotech/social-helpers/auth/auth.service';
 
 @ApiTags('Billing')
 @Controller('/billing')

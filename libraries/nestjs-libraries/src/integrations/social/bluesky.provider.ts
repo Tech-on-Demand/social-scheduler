@@ -3,13 +3,13 @@ import {
   PostDetails,
   PostResponse,
   SocialProvider,
-} from '@gitroom/nestjs-libraries/integrations/social/social.integrations.interface';
-import { makeId } from '@gitroom/nestjs-libraries/services/make.is';
+} from '@turbotech/social-nestjs-libraries/integrations/social/social.integrations.interface';
+import { makeId } from '@turbotech/social-nestjs-libraries/services/make.is';
 import {
   BadBody,
   RefreshToken,
   SocialAbstract,
-} from '@gitroom/nestjs-libraries/integrations/social.abstract';
+} from '@turbotech/social-nestjs-libraries/integrations/social.abstract';
 import {
   BskyAgent,
   RichText,
@@ -20,13 +20,13 @@ import {
 } from '@atproto/api';
 import dayjs from 'dayjs';
 import { Integration } from '@prisma/client';
-import { AuthService } from '@gitroom/helpers/auth/auth.service';
+import { AuthService } from '@turbotech/social-helpers/auth/auth.service';
 import sharp from 'sharp';
-import { Plug } from '@gitroom/helpers/decorators/plug.decorator';
-import { timer } from '@gitroom/helpers/utils/timer';
+import { Plug } from '@turbotech/social-helpers/decorators/plug.decorator';
+import { timer } from '@turbotech/social-helpers/utils/timer';
 import axios from 'axios';
-import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validation';
-import { Rules } from '@gitroom/nestjs-libraries/chat/rules.description.decorator';
+import { stripHtmlValidation } from '@turbotech/social-helpers/utils/strip.html.validation';
+import { Rules } from '@turbotech/social-nestjs-libraries/chat/rules.description.decorator';
 
 async function reduceImageBySize(url: string, maxSizeKB = 976) {
   try {

@@ -1,7 +1,7 @@
 import {
   AuthProvider,
   AuthProviderAbstract,
-} from '@gitroom/backend/services/auth/providers.interface';
+} from '@turbotech/social-backend/services/auth/providers.interface';
 
 @AuthProvider({ provider: 'GENERIC' })
 export class OauthProvider extends AuthProviderAbstract {

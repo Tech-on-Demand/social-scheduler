@@ -1,13 +1,13 @@
 import {
   AgentToolInterface,
   ToolReturn,
-} from '@gitroom/nestjs-libraries/chat/agent.tool.interface';
+} from '@turbotech/social-nestjs-libraries/chat/agent.tool.interface';
 import { createTool } from '@mastra/core/tools';
 import { Injectable } from '@nestjs/common';
-import { IntegrationService } from '@gitroom/nestjs-libraries/database/prisma/integrations/integration.service';
+import { IntegrationService } from '@turbotech/social-nestjs-libraries/database/prisma/integrations/integration.service';
 import z from 'zod';
-import { checkAuth } from '@gitroom/nestjs-libraries/chat/auth.context';
-import { getAuth } from '@gitroom/nestjs-libraries/chat/async.storage';
+import { checkAuth } from '@turbotech/social-nestjs-libraries/chat/auth.context';
+import { getAuth } from '@turbotech/social-nestjs-libraries/chat/async.storage';
 
 @Injectable()
 export class IntegrationListTool implements AgentToolInterface {

@@ -1,8 +1,8 @@
-import { initializeSentry } from '@gitroom/nestjs-libraries/sentry/initialize.sentry';
+import { initializeSentry } from '@turbotech/social-nestjs-libraries/sentry/initialize.sentry';
 initializeSentry('backend', true);
 import compression from 'compression';
 
-import { loadSwagger } from '@gitroom/helpers/swagger/load.swagger';
+import { loadSwagger } from '@turbotech/social-helpers/swagger/load.swagger';
 import { json } from 'express';
 import { Runtime } from '@temporalio/worker';
 Runtime.install({ shutdownSignals: [] });
@@ -14,10 +14,10 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
-import { SubscriptionExceptionFilter } from '@gitroom/backend/services/auth/permissions/subscription.exception';
-import { HttpExceptionFilter } from '@gitroom/nestjs-libraries/services/exception.filter';
-import { ConfigurationChecker } from '@gitroom/helpers/configuration/configuration.checker';
-import { startMcp } from '@gitroom/nestjs-libraries/chat/start.mcp';
+import { SubscriptionExceptionFilter } from '@turbotech/social-backend/services/auth/permissions/subscription.exception';
+import { HttpExceptionFilter } from '@turbotech/social-nestjs-libraries/services/exception.filter';
+import { ConfigurationChecker } from '@turbotech/social-helpers/configuration/configuration.checker';
+import { startMcp } from '@turbotech/social-nestjs-libraries/chat/start.mcp';
 
 async function start() {
   const app = await NestFactory.create(AppModule, {
