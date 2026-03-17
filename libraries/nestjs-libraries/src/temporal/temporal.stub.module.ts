@@ -8,7 +8,6 @@
 import { Global, Module } from '@nestjs/common';
 import { TemporalService } from 'nestjs-temporal-core';
 import { SchedulerModule } from '@turbotech/social-nestjs-libraries/scheduler/scheduler.module';
-import { SchedulerService } from '@turbotech/social-nestjs-libraries/scheduler/scheduler.service';
 
 const noopClient = {
   getRawClient: () => ({
@@ -64,6 +63,6 @@ const stubTemporalService = {
       useValue: stubTemporalService,
     },
   ],
-  exports: [TemporalService, SchedulerModule, SchedulerService],
+  exports: [TemporalService, SchedulerModule],
 })
 export class TemporalStubModule {}
