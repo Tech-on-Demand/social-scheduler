@@ -7,4 +7,4 @@ RUN pnpm install --frozen-lockfile
 RUN pnpm run build:backend
 RUN npx prisma generate --schema=libraries/nestjs-libraries/src/database/prisma/schema.prisma
 EXPOSE 3000
-CMD ["sh", "-c", "npx prisma migrate deploy --schema=libraries/nestjs-libraries/src/database/prisma/schema.prisma && node apps/backend/dist/main.js"]
+CMD ["sh", "-c", "npx prisma db push --schema=libraries/nestjs-libraries/src/database/prisma/schema.prisma --accept-data-loss --skip-generate && node apps/backend/dist/main.js"]
