@@ -1,5 +1,5 @@
 import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
-import PgBoss from 'pg-boss';
+import { PgBoss } from 'pg-boss';
 
 @Injectable()
 export class SchedulerService implements OnApplicationBootstrap {
