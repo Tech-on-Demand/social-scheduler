@@ -12,9 +12,7 @@ import { VideoModule } from '@turbotech/social-nestjs-libraries/videos/video.mod
 import { SentryModule } from '@sentry/nestjs/setup';
 import { FILTER } from '@turbotech/social-nestjs-libraries/sentry/sentry.exception';
 import { ChatModule } from '@turbotech/social-nestjs-libraries/chat/chat.module';
-import { getTemporalModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.module';
-import { TemporalRegisterMissingSearchAttributesModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.register';
-import { InfiniteWorkflowRegisterModule } from '@turbotech/social-nestjs-libraries/temporal/infinite.workflow.register';
+import { TemporalStubModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.stub.module';
 import { ThrottlerStorageRedisService } from '@nest-lab/throttler-storage-redis';
 import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service';
 
@@ -29,9 +27,7 @@ import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service'
     ThirdPartyModule,
     VideoModule,
     ChatModule,
-    getTemporalModule(false),
-    TemporalRegisterMissingSearchAttributesModule,
-    InfiniteWorkflowRegisterModule,
+    TemporalStubModule,
     ThrottlerModule.forRoot({
       throttlers: [
         {
