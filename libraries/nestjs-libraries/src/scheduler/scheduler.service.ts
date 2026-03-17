@@ -18,8 +18,10 @@ export class SchedulerService implements OnApplicationBootstrap {
 
   async start() {
     await this.boss.start();
-    await this.boss.work<{ postId: string }>('social-posts', async (job) => {
-      this.logger.log(`Processing post: ${job.data.postId}`);
+    await this.boss.work<{ postId: string }>('social-posts', async (jobs) => {
+      for (const job of jobs) {
+        this.logger.log(`Processing post: ${job.data.postId}`);
+      }
     });
     this.logger.log('SchedulerService started, worker registered for social-posts');
   }
