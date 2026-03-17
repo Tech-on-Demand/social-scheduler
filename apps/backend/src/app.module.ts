@@ -13,6 +13,8 @@ import { SentryModule } from '@sentry/nestjs/setup';
 import { FILTER } from '@turbotech/social-nestjs-libraries/sentry/sentry.exception';
 import { ChatModule } from '@turbotech/social-nestjs-libraries/chat/chat.module';
 import { TemporalStubModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.stub.module';
+import { BootstrapModule } from '@turbotech/social-nestjs-libraries/bootstrap/bootstrap.module';
+import { HealthModule } from '@turbotech/social-backend/api/health/health.module';
 import { ThrottlerStorageRedisService } from '@nest-lab/throttler-storage-redis';
 import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service';
 
@@ -28,6 +30,8 @@ import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service'
     VideoModule,
     ChatModule,
     TemporalStubModule,
+    BootstrapModule,
+    HealthModule,
     ThrottlerModule.forRoot({
       throttlers: [
         {
