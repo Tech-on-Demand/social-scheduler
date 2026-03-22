@@ -333,7 +333,6 @@
       "@swc/core",
       "bcrypt",
       "bufferutil",
-      "canvas",
       "core-js",
       "core-js-pure",
       "esbuild",
