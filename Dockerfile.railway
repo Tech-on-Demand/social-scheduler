@@ -3,7 +3,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends g++ make python
 RUN npm install -g pnpm@10.6.1
 WORKDIR /app
 COPY . .
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --config.confirmModulesPureness=false
 RUN pnpm run build:backend
 RUN npx prisma generate --schema=libraries/nestjs-libraries/src/database/prisma/schema.prisma
 EXPOSE 3000
