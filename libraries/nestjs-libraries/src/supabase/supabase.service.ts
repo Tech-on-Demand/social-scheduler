@@ -30,7 +30,7 @@ export interface SocialAccount {
 @Injectable()
 export class SupabaseService {
   private readonly logger = new Logger(SupabaseService.name);
-  private client: SupabaseClient;
+  private client: SupabaseClient | null = null;
 
   constructor() {
     const url = process.env.SUPABASE_URL;
@@ -40,16 +40,20 @@ export class SupabaseService {
       this.logger.warn(
         'SUPABASE_URL or SUPABASE_SERVICE_KEY not set — Supabase disabled'
       );
+      this.client = null;
+      return;
     }
 
-    this.client = createClient(url || '', key || '');
+    this.client = createClient(url, key);
   }
 
-  getClient(): SupabaseClient {
+  getClient(): SupabaseClient | null {
     return this.client;
   }
 
   async getScheduledPost(postId: string): Promise<ScheduledPost | null> {
+    if (!this.client) return null;
+
     const { data, error } = await this.client
       .from('scheduled_posts')
       .select('*')
@@ -67,6 +71,8 @@ export class SupabaseService {
     userId: string,
     platform: string
   ): Promise<SocialAccount | null> {
+    if (!this.client) return null;
+
     const { data, error } = await this.client
       .from('social_accounts')
       .select('*')
@@ -88,6 +94,8 @@ export class SupabaseService {
     status: 'posted' | 'failed' | 'publishing',
     extra: { error?: string; posted_at?: string } = {}
   ): Promise<void> {
+    if (!this.client) return;
+
     const { error } = await this.client
       .from('scheduled_posts')
       .update({ status, ...extra })
