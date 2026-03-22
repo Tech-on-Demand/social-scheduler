@@ -1,13 +1,13 @@
 import { Body, Controller, Post, Logger } from '@nestjs/common';
 import { PublishService, PublishRequest, PlatformResult } from './publish.service';
 
-@Controller('/posts')
+@Controller('/publish')
 export class PublishController {
   private readonly logger = new Logger(PublishController.name);
 
   constructor(private readonly publishService: PublishService) {}
 
-  @Post('/publish')
+  @Post('/')
   async publish(
     @Body() body: PublishRequest
   ): Promise<{ results: PlatformResult[] }> {
