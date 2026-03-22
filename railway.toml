@@ -2,4 +2,4 @@
   healthcheckPath = "/health"
   healthcheckTimeout = 300
   restartPolicyType = "ON_FAILURE"
-  startCommand = "npx prisma db push --schema=libraries/nestjs-libraries/src/database/prisma/schema.prisma --accept-data-loss --skip-generate && node -e \"process.on('uncaughtException', e => { console.error('UNCAUGHT:', e); process.exit(1); }); process.on('unhandledRejection', e => { console.error('UNHANDLED:', e); process.exit(1); }); console.log('=== NODE STARTING ==='); require('./apps/backend/dist/apps/backend/src/main.js');\" 2>&1"
+  startCommand = "bash start.sh"
