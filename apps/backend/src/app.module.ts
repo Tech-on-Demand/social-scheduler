@@ -17,6 +17,9 @@ import { BootstrapModule } from '@turbotech/social-nestjs-libraries/bootstrap/bo
 import { HealthModule } from '@turbotech/social-backend/api/health/health.module';
 import { ThrottlerStorageRedisService } from '@nest-lab/throttler-storage-redis';
 import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service';
+import { SupabaseModule } from '@turbotech/social-nestjs-libraries/supabase/supabase.module';
+import { PublishModule } from '@turbotech/social-nestjs-libraries/publish/publish.module';
+import { PublishController } from '@turbotech/social-nestjs-libraries/publish/publish.controller';
 
 @Global()
 @Module({
@@ -32,6 +35,8 @@ import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service'
     TemporalStubModule,
     BootstrapModule,
     HealthModule,
+    SupabaseModule,
+    PublishModule,
     ThrottlerModule.forRoot({
       throttlers: [
         {
@@ -42,7 +47,7 @@ import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service'
       storage: new ThrottlerStorageRedisService(ioRedis),
     }),
   ],
-  controllers: [],
+  controllers: [PublishController],
   providers: [
     FILTER,
     {
