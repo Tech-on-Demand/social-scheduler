@@ -26,13 +26,8 @@
     "strict": true,
     "paths": {
       "@turbotech/social-backend/*": ["apps/backend/src/*"],
-      "@gitroom/frontend/*": ["apps/frontend/src/*"],
       "@turbotech/social-helpers/*": ["libraries/helpers/src/*"],
-      "@turbotech/social-nestjs-libraries/*": ["libraries/nestjs-libraries/src/*"],
-      "@gitroom/react/*": ["libraries/react-shared-libraries/src/*"],
-      "@gitroom/plugins/*": ["libraries/plugins/src/*"],
-      "@gitroom/orchestrator/*": ["apps/orchestrator/src/*"],
-      "@gitroom/extension/*": ["apps/extension/src/*"]
+      "@turbotech/social-nestjs-libraries/*": ["libraries/nestjs-libraries/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

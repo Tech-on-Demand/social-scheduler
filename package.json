@@ -76,7 +76,6 @@
     "@nestjs/swagger": "^7.3.0",
     "@nestjs/throttler": "^6.3.0",
     "@neynar/nodejs-sdk": "^3.112.0",
-    "@neynar/react": "^0.9.7",
     "@pigment-css/react": "^0.0.30",
     "@postiz/wallets": "^0.0.1",
     "@prisma/client": "6.5.0",
@@ -88,6 +87,7 @@
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@stripe/react-stripe-js": "^5.4.1",
     "@stripe/stripe-js": "^8.6.0",
+    "@supabase/supabase-js": "^2.99.3",
     "@swc/helpers": "0.5.13",
     "@sweetalert2/theme-dark": "^5.0.16",
     "@tailwindcss/postcss": "^4.1.7",
@@ -186,7 +186,7 @@
     "nestjs-command": "^3.1.4",
     "nestjs-real-ip": "^3.0.1",
     "nestjs-temporal-core": "^3.2.0",
-    "next": "14.2.35",
+    "next": "^14.2.35",
     "next-plausible": "^3.12.0",
     "node-fetch": "^3.3.2",
     "node-telegram-bot-api": "^0.66.0",
@@ -195,6 +195,7 @@
     "openai": "^6.2.0",
     "p-limit": "^3.1.0",
     "parse5": "^6.0.1",
+    "pg-boss": "^12.14.0",
     "polotno": "^2.10.5",
     "posthog-js": "^1.178.0",
     "react": "18.3.1",
@@ -321,7 +322,25 @@
       "next": "14.2.35"
     },
     "onlyBuiltDependencies": [
-      "bcrypt"
+      "@nestjs/core",
+      "@openapitools/openapi-generator-cli",
+      "@parcel/watcher",
+      "@prisma/client",
+      "@prisma/engines",
+      "@scarf/scarf",
+      "@sentry-internal/node-cpu-profiler",
+      "@sentry/cli",
+      "@swc/core",
+      "bcrypt",
+      "bufferutil",
+      "core-js",
+      "core-js-pure",
+      "esbuild",
+      "prisma",
+      "protobufjs",
+      "sharp",
+      "unrs-resolver",
+      "utf-8-validate"
     ]
   }
 }

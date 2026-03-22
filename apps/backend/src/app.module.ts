@@ -12,11 +12,14 @@ import { VideoModule } from '@turbotech/social-nestjs-libraries/videos/video.mod
 import { SentryModule } from '@sentry/nestjs/setup';
 import { FILTER } from '@turbotech/social-nestjs-libraries/sentry/sentry.exception';
 import { ChatModule } from '@turbotech/social-nestjs-libraries/chat/chat.module';
-import { getTemporalModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.module';
-import { TemporalRegisterMissingSearchAttributesModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.register';
-import { InfiniteWorkflowRegisterModule } from '@turbotech/social-nestjs-libraries/temporal/infinite.workflow.register';
+import { TemporalStubModule } from '@turbotech/social-nestjs-libraries/temporal/temporal.stub.module';
+import { BootstrapModule } from '@turbotech/social-nestjs-libraries/bootstrap/bootstrap.module';
+import { HealthModule } from '@turbotech/social-backend/api/health/health.module';
 import { ThrottlerStorageRedisService } from '@nest-lab/throttler-storage-redis';
 import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service';
+import { SupabaseModule } from '@turbotech/social-nestjs-libraries/supabase/supabase.module';
+import { PublishModule } from '@turbotech/social-nestjs-libraries/publish/publish.module';
+import { PublishController } from '@turbotech/social-nestjs-libraries/publish/publish.controller';
 
 @Global()
 @Module({
@@ -29,9 +32,11 @@ import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service'
     ThirdPartyModule,
     VideoModule,
     ChatModule,
-    getTemporalModule(false),
-    TemporalRegisterMissingSearchAttributesModule,
-    InfiniteWorkflowRegisterModule,
+    TemporalStubModule,
+    BootstrapModule,
+    HealthModule,
+    SupabaseModule,
+    PublishModule,
     ThrottlerModule.forRoot({
       throttlers: [
         {
@@ -42,7 +47,7 @@ import { ioRedis } from '@turbotech/social-nestjs-libraries/redis/redis.service'
       storage: new ThrottlerStorageRedisService(ioRedis),
     }),
   ],
-  controllers: [],
+  controllers: [PublishController],
   providers: [
     FILTER,
     {
